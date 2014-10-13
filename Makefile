@@ -10,8 +10,8 @@ DEFINES = -Dextname
 
 LIB_NAME = libspa
 
-CXX        = g++
-LD         = g++
+CXX        = g++-4.9
+LD         = g++-4.9
 
 CXXFLAGS   = -Wall -Wextra --std=c++11
 
