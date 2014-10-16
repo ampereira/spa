@@ -1,18 +1,18 @@
 
 enum class Statistic {
-	Average,
-	Minimum,
-	Maximum,
-	StdDev,
-	KBest
+	Average=0,
+	Minimum=1,
+	Maximum=2,
+	StdDev=3,
+	KBest=4
 };
 
 enum class Error {
-	Statistic,
-	Measurement
+	Statistic=10,
+	Measurement=11
 };
 
 enum class Report {
-	Verbose,
-	Csv
+	Verbose=20,
+	Csv=21
 };

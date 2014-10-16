@@ -51,10 +51,10 @@ void Measure::errorReport (Error error, const char* file, const char* func) {
 	string err;
 
 	switch (error) {
-		case Error::Statistic :
+		case 10 :
 			err = "Statistic";
 			break;
-		case Error::Measurement :
+		case 11 :
 			err = "Measurement";
 			break;
 		default :
@@ -189,13 +189,13 @@ long long unsigned Measure::getStatistic (Statistic stat) {
 	long long unsigned result = 0;
 
 	switch (stat) {
-		case Statistic::Average :
+		case 0 :
 			result = getAverage(); break;
-		case Statistic::Minimum :
+		case 1 :
 			result = getMinimum(); break;
-		case Statistic::Maximum :
+		case 2 :
 			result = getMaximum(); break;
-		case Statistic::StdDev :
+		case 3 :
 			if (measurements.size() == 1)
 				errorReport(Error::Statistic, __FILE__, __func__);
 			else
@@ -217,16 +217,16 @@ void Measure::reportVerbose (void) {
 	if (!kbest_measure)
 		for (auto stat : statistics) {
 			switch (stat) {
-				case Statistic::Average : 
+				case 0 : 
 					cout << " => Average: ";
 					break;
-				case Statistic::Minimum : 
+				case 1 : 
 					cout << " => Minimum: ";
 					break;
-				case Statistic::Maximum : 
+				case 2 : 
 					cout << " => Maximum: ";
 					break;
-				case Statistic::StdDev : 
+				case 3 : 
 					cout << " => StdDev: ";
 					break;
 			}
@@ -250,8 +250,8 @@ map<Statistic,long long unsigned> Measure::report (Report type) {
 		results[stat] = getStatistic(stat);
 
 	switch (type) {
-		case Report::Verbose : reportVerbose(); break;
-		case Report::Csv : break;
+		case 20 : reportVerbose(); break;
+		case 21 : break;
 	}
 
 	return results;

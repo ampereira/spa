@@ -3,6 +3,7 @@
 #include <vector>
 #include <map>
 #include <algorithm>
+#include <cmath>
 
 #include "enum_types.h"
 
@@ -38,4 +39,8 @@ public:
 	long long unsigned kbest (void (*function)(void), float, unsigned, unsigned, unsigned);
 	std::map<Statistic,long long unsigned> report (Report);
 	bool addStatistic (Statistic);
+
+	#ifdef PAPI_SUPPORT
+
+	#endif
 };
