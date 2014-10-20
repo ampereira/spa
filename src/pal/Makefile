@@ -30,7 +30,7 @@ pal: event.o eventset.o measure.o pal.o
 	@mv libpal.a $(LIB_DIR)/libpal.a
 
 test: pal $(TEST_DIR)/test.cpp
-	$(CXX) -O3 -Wall -Wextra -o examples/test.out $(LIB_FLAGS) -L/home/ampereira/spa/src/pal/lib examples/test.cpp -lpapi -lpal
+	$(CXX) -O3 -Wall -Wextra -static -o examples/test.out $(LIB_FLAGS) -L/home/ampereira/spa/src/pal/lib examples/test.cpp -lpapi -lpal
 
 #test2: pal.o event.o errors.o eventset.o measure.o $(TEST_DIR)/test.cpp
 #	$(CXX) -g -Wall -Wextra -o examples/test.out build/pal.o build/event.o build/eventset.o build/errors.o build/measure.o examples/test.cpp -lpapi
