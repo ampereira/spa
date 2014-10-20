@@ -4,7 +4,7 @@ CXX = g++
 CXX_FLAGS = -O3 -Wall -Wextra -std=c++11
 PAPI_DIR = /home/ampereira/tools/papi-gcc4.9.0
 LIB_FLAGS = -I$(PAPI_DIR)/include -L$(PAPI_DIR)/lib
-PAPI_FLAGS = -lpapi
+PAPI_FLAGS = -Bstatic -lpapi -Bdynamic
 
 BUILD_DIR = build
 SRC_DIR = src
@@ -30,7 +30,7 @@ pal: event.o eventset.o measure.o pal.o
 	@mv libpal.a $(LIB_DIR)/libpal.a
 
 test: pal $(TEST_DIR)/test.cpp
-	$(CXX) -O3 -Wall -Wextra -static -o examples/test.out $(LIB_FLAGS) -L/home/ampereira/spa/src/pal/lib examples/test.cpp -lpapi -lpal
+	$(CXX) -O3 -Wall -Wextra -o examples/test.out $(LIB_FLAGS) -L/home/ampereira/spa/src/pal/lib examples/test.cpp -lpapi -lpal
 
 #test2: pal.o event.o errors.o eventset.o measure.o $(TEST_DIR)/test.cpp
 #	$(CXX) -g -Wall -Wextra -o examples/test.out build/pal.o build/event.o build/eventset.o build/errors.o build/measure.o examples/test.cpp -lpapi
