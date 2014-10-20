@@ -1,3 +1,5 @@
+#ifdef PAPI_SUPPORT
+
 #ifndef MEASURE
 #define MEASURE
 
@@ -27,4 +29,5 @@ namespace Hardware {
 	};
 }
 
+#endif
 #endif

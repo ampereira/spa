@@ -1,3 +1,5 @@
+#ifdef PAPI_SUPPORT
+
 #include "pal.h"
 
 using namespace std;
@@ -29,3 +31,4 @@ namespace Hardware {
 		measurements[m_id].report();
 	}
 }
+#endif

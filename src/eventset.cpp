@@ -1,3 +1,5 @@
+#ifdef PAPI_SUPPORT
+
 #include "eventset.h"
 
 using namespace std;
@@ -23,7 +25,7 @@ namespace Hardware {
 	int EventSet::operator[] (unsigned index) {
 		if (index >= total_events) {
 			try {
-				throw OUT_OF_BOUNDS;
+				throw Error::OUT_OF_BOUNDS;
 			} catch (Error e) {
 				cerr << "PAL | EventSet: index out of bounds: " << index << ", max is " << total_events - 1 << endl;
 				cerr << "PAL | EventSet: at file " << __FILE__ << ", line " << __LINE__ - 5 << endl;
@@ -109,3 +111,4 @@ namespace Hardware {
 		event_list[index].addResult(value);
 	}
 }
+#endif

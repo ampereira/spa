@@ -1,3 +1,5 @@
+#ifdef PAPI_SUPPORT
+
 #include "pal_measure.h"
 
 using namespace std;
@@ -107,3 +109,4 @@ namespace Hardware {
 		return eventset;
 	}
 }
+#endif

@@ -1,3 +1,5 @@
+#ifdef PAPI_SUPPORT
+
 #ifndef EVENTSET 
 #define EVENTSET 
 
@@ -5,7 +7,7 @@
 #include <cstdlib>
 #include <iostream>
 #include <vector>
-#include "errors.h"
+#include "enum_types.h"
 #include "event.h"
 
 
@@ -29,4 +31,5 @@ namespace Hardware {
 	};
 }
 
+#endif
 #endif

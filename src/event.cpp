@@ -1,3 +1,5 @@
+#ifdef PAPI_SUPPORT
+
 #include "event.h"
 
 using namespace std;
@@ -52,3 +54,5 @@ namespace Hardware {
 		return stdev;
 	}
 }
+
+#endif

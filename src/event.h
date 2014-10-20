@@ -1,3 +1,4 @@
+#ifdef PAPI_SUPPORT
 #ifndef EVENT
 #define EVENT
 
@@ -23,4 +24,5 @@ namespace Hardware {
 	};
 }
 
+#endif
 #endif

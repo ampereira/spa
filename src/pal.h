@@ -1,3 +1,5 @@
+#ifdef PAPI_SUPPORT
+
 #ifndef PAL_LIB
 #define PAL_LIB
 
@@ -20,4 +22,5 @@ namespace Hardware {
 	void report (unsigned);
 }
 
+#endif
 #endif

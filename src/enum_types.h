@@ -11,7 +11,8 @@ enum class Statistic {
 
 enum class Error {
 	Statistic=10,
-	Measurement=11
+	Measurement=11,
+	OUT_OF_BOUNDS=12
 };
 
 enum class Report {
