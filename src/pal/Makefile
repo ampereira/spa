@@ -26,7 +26,7 @@ pal.o: $(SRC_DIR)/pal.cpp $(SRC_DIR)/pal.h $(SRC_DIR)/pal_measure.h
 	$(CXX) $(CXX_FLAGS) $(LIB_FLAGS) -c -o $(BUILD_DIR)/pal.o $(SRC_DIR)/pal.cpp $(PAPI_FLAGS)
 
 pal: event.o eventset.o measure.o pal.o
-	ar -r libpal.a $(BUILD_DIR)/pal.o $(BUILD_DIR)/event.o $(BUILD_DIR)/eventset.o $(BUILD_DIR)/measure.o $(PAPI_FLAGS)
+	ar -r libpal.a $(LIB_FLAGS) $(BUILD_DIR)/pal.o $(BUILD_DIR)/event.o $(BUILD_DIR)/eventset.o $(BUILD_DIR)/measure.o $(PAPI_FLAGS)
 	@mv libpal.a $(LIB_DIR)/libpal.a
 
 test: pal $(TEST_DIR)/test.cpp
