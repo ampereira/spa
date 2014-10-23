@@ -65,7 +65,7 @@ all: checkdirs $(LIB_DIR)/$(LIB_NAME).a
 
 papi: CXXFLAGS += -DPAPI_SUPPORT -I$(PAPI_DIR)/include -L$(PAPI_DIR)/lib
 papi: LIBS = -lpapi
-papi: PAPI_AR_FLAGS = -L$(PAPI_DIR)/lib/libpapi.a
+papi: PAPI_AR_FLAGS = $(PAPI_DIR)/lib/libpapi.a
 papi: all
 
 clean:
