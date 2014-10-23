@@ -55,7 +55,7 @@ $(BUILD_DIR)/%.o: %.cpp
 	$(CXX) -c $(CXXFLAGS) $(INCLUDES) $< -o $@ $(LIBS)
 
 $(LIB_DIR)/$(LIB_NAME).a: $(DEPS) $(OBJ)
-	ar -r $@ $(OBJ) $(PAPI_AR_FLAGS) $(LIBS)
+	ar -r $@ $(OBJ) $(PAPI_AR_FLAGS)
 
 checkdirs:
 	@mkdir -p $(BUILD_DIR)
@@ -65,7 +65,7 @@ all: checkdirs $(LIB_DIR)/$(LIB_NAME).a
 
 papi: CXXFLAGS += -DPAPI_SUPPORT -I$(PAPI_DIR)/include -L$(PAPI_DIR)/lib
 papi: LIBS = -lpapi
-papi: PAPI_AR_FLAGS = -L$(PAPI_DIR)/lib
+papi: PAPI_AR_FLAGS = -L$(PAPI_DIR)/lib/libpapi.a
 papi: all
 
 clean:
