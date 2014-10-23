@@ -52,7 +52,7 @@ namespace Timer {
 	void Measure::errorReport (Error error, const char* file, const char* func) {
 		string err;
 
-		switch ((int) error) {
+		switch (as_integer(error)) {
 			case 10 :
 				err = "Statistic";
 				break;
@@ -190,7 +190,7 @@ namespace Timer {
 	long long unsigned Measure::getStatistic (Statistic stat) {
 		long long unsigned result = 0;
 
-		switch (stat) {
+		switch (as_integer(stat)) {
 			case 0 :
 				result = getAverage(); break;
 			case 1 :
@@ -218,7 +218,7 @@ namespace Timer {
 
 		if (!kbest_measure)
 			for (auto stat : statistics) {
-				switch (stat) {
+				switch (as_integer(stat)) {
 					case 0 : 
 						cout << " => Average: ";
 						break;
@@ -251,7 +251,7 @@ namespace Timer {
 		for (auto stat : statistics)
 			results[stat] = getStatistic(stat);
 
-		switch (type) {
+		switch (as_integer(type)) {
 			case 20 : reportVerbose(); break;
 			case 21 : break;
 		}
