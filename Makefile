@@ -19,6 +19,7 @@ LD  = g++
 CXXFLAGS   = -Wall -Wextra --std=c++11
 PAPI_DIR = /home/ampereira/tools/papi-gcc4.9.0
 
+
 ifeq ($(DEBUG),yes)
 	CXXFLAGS += -ggdb3
 else
@@ -54,7 +55,7 @@ $(BUILD_DIR)/%.o: %.cpp
 	$(CXX) -c $(CXXFLAGS) $(INCLUDES) $< -o $@ $(LIBS)
 
 $(LIB_DIR)/$(LIB_NAME).a: $(DEPS) $(OBJ)
-	ar -r $@ $(OBJ) $(CXXFLAGS) $(LIBS)
+	ar -r $@ $(OBJ) $(PAPI_AR_FLAGS) $(LIBS)
 
 checkdirs:
 	@mkdir -p $(BUILD_DIR)
@@ -64,6 +65,7 @@ all: checkdirs $(LIB_DIR)/$(LIB_NAME).a
 
 papi: CXXFLAGS += -DPAPI_SUPPORT -I$(PAPI_DIR)/include -L$(PAPI_DIR)/lib
 papi: LIBS = -lpapi
+papi: PAPI_AR_FLAGS = -L$(PAPI_DIR)/lib
 papi: all
 
 clean:
