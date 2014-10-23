@@ -10,15 +10,15 @@ DEFINES = -Dextname
 
 LIB_NAME = libspa
 
-#CXX = g++-4.9
-#LD  = g++-4.9
+CXX = g++
+LD  = g++
 
-CXX = clang++
-LD  = clang++
+#CXX = clang++
+#LD  = clang++
 
 CXXFLAGS   = -Wall -Wextra --std=c++11
 PAPI_DIR = /home/ampereira/tools/papi-gcc4.9.0
-LIBS
+LIBS = ""
 
 ifeq ($(DEBUG),yes)
 	CXXFLAGS += -ggdb3
