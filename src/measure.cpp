@@ -52,7 +52,7 @@ namespace Timer {
 	void Measure::errorReport (Error error, const char* file, const char* func) {
 		string err;
 
-		switch (error) {
+		switch ((int) error) {
 			case 10 :
 				err = "Statistic";
 				break;

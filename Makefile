@@ -18,7 +18,7 @@ LD  = g++
 
 CXXFLAGS   = -Wall -Wextra --std=c++11
 PAPI_DIR = /home/ampereira/tools/papi-gcc4.9.0
-LIBS = ""
+LIBS = 
 
 ifeq ($(DEBUG),yes)
 	CXXFLAGS += -ggdb3
