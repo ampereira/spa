@@ -1,6 +1,8 @@
 // switch comparisons must be performed with the respective
 // id to be compatible with intel compilers
 
+#include <cstdlib>
+
 enum class Statistic {
 	Average=0,
 	Minimum=1,
