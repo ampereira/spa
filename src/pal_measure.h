@@ -4,6 +4,7 @@
 #define MEASURE
 
 #include "eventset.h"
+#include <string>
 
 // GCC hacks for optimizing conditional blocks
 #define likely(x)	__builtin_expect(!!(x), 1)	// likely for the condition to be true
@@ -20,6 +21,7 @@ namespace Hardware {
 	public:
 		Measure (EventSet&, unsigned);
 		Measure (EventSet&);
+		Measure (vector<string>);
 		bool start (void);
 		bool stop (void);
 		void report (void);

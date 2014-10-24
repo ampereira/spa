@@ -7,19 +7,16 @@ using namespace std;
 namespace Hardware {
 	EventSet::EventSet (int num_events) {
 		events = new int [num_events];
-		eventset_size = 0;
 	}
 
 	EventSet::EventSet (vector<string> evts) {
 		events = new int [evts.size()];
-		eventset_size = 0;
 
 		create(evts);
 	}
 
 	EventSet::EventSet () {
 		events = new int [1];
-		eventset_size = 0;
 	}
 
 	int EventSet::operator[] (unsigned index) {

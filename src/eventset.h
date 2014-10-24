@@ -14,7 +14,7 @@
 namespace Hardware {
 	class EventSet {
 		int *events;
-		unsigned eventset_size;	// amount of eventsets
+		unsigned eventset_size = 0;	// amount of eventsets
 		unsigned total_events;  // amount of events
 		std::vector<Event> event_list;
 

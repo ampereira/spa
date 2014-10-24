@@ -21,6 +21,14 @@ namespace Hardware {
 		repetitions = 0;
 	}
 
+	Measure::Measure (vector<string> counters) {
+		eventset.create(counters);
+		event_number = 0;
+		event_rep = 0;
+		predefined_reps = false;
+		repetitions = 0;
+	}
+
 	// cada vez que se executa o par start stop mede um evento
 	// para ja so mede uma vez cada evento
 	bool Measure::start (void) {
