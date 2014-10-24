@@ -22,7 +22,7 @@ namespace Hardware {
 	public:
 		Measure (EventSet&, unsigned);
 		Measure (EventSet&);
-		Measure (std::vector<string>);
+		Measure (std::vector<std::string>);
 		bool start (void);
 		bool stop (void);
 		void report (void);
