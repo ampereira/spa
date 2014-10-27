@@ -1,6 +1,6 @@
 #ifdef PAPI_SUPPORT
 
-#include "pal.h"
+#include "spa.h"
 
 using namespace std;
 
