@@ -1,5 +1,7 @@
 // switch comparisons must be performed with the respective
 // id to be compatible with intel compilers
+#ifndef SPA_ENUM_TYPES
+#define SPA_ENUM_TYPES
 
 #include <type_traits>
 
@@ -28,3 +30,5 @@ auto as_integer(Enumeration const value)
 {
 	return static_cast<typename std::underlying_type<Enumeration>::type>(value);
 }
+
+#endif
